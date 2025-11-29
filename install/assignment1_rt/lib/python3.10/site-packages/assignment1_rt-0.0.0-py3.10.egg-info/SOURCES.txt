@@ -9,6 +9,8 @@ setup.py
 ../build/assignment1_rt/assignment1_rt.egg-info/top_level.txt
 ../build/assignment1_rt/assignment1_rt.egg-info/zip-safe
 assignment1_rt/__init__.py
+assignment1_rt/turtle_spawn.py
+assignment1_rt/ui_node.py
 resource/assignment1_rt
 test/test_copyright.py
 test/test_flake8.py
