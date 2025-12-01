@@ -1,3 +1,5 @@
 [console_scripts]
-
+distance_node = assignment1_rt.distance_node:main
+turtle_spawn = assignment1_rt.turtle_spawn:main
+ui_node = assignment1_rt.ui_node:main
 

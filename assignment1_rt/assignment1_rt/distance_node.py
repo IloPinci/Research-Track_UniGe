@@ -10,6 +10,7 @@ import math
 THRESHOLD = 1.0
 BOUNDARY_MIN = 1.0
 BOUNDARY_MAX = 10.0
+BACKUP_SPEED = 0.5  # Speed to back away
 
 class distance_node(Node):
     def __init__(self):
@@ -37,6 +38,57 @@ class distance_node(Node):
     def pose2_callback(self, msg):
         self.pose2 = msg
 
+    def move_away_from_boundary(self, pose, pub, turtle_name):
+        """Make turtle move away from the nearest boundary"""
+        backup = Twist()
+        
+        # Calculate distances to each boundary
+        dist_to_left = pose.x - BOUNDARY_MIN
+        dist_to_right = BOUNDARY_MAX - pose.x
+        dist_to_bottom = pose.y - BOUNDARY_MIN
+        dist_to_top = BOUNDARY_MAX - pose.y
+        
+        # Find which boundary is closest
+        min_dist = min(dist_to_left, dist_to_right, dist_to_bottom, dist_to_top)
+        
+        # Determine direction to move (towards center)
+        target_angle = None
+        if min_dist == dist_to_left:
+            # Too close to left, move right (angle = 0)
+            target_angle = 0.0
+            print(f"WARNING: {turtle_name} too close to LEFT boundary!")
+        elif min_dist == dist_to_right:
+            # Too close to right, move left (angle = π)
+            target_angle = math.pi
+            print(f"WARNING: {turtle_name} too close to RIGHT boundary!")
+        elif min_dist == dist_to_bottom:
+            # Too close to bottom, move up (angle = π/2)
+            target_angle = math.pi / 2
+            print(f"WARNING: {turtle_name} too close to BOTTOM boundary!")
+        else:
+            # Too close to top, move down (angle = -π/2)
+            target_angle = -math.pi / 2
+            print(f"WARNING: {turtle_name} too close to TOP boundary!")
+        
+        # Calculate angle difference between current heading and target
+        angle_diff = target_angle - pose.theta
+        
+        # Normalize angle to [-π, π]
+        while angle_diff > math.pi:
+            angle_diff -= 2 * math.pi
+        while angle_diff < -math.pi:
+            angle_diff += 2 * math.pi
+        
+        # If we're facing roughly the right direction, move forward towards center
+        # Otherwise, rotate to face the center
+        if abs(angle_diff) < math.pi / 4:  # Within 45 degrees
+            backup.linear.x = BACKUP_SPEED
+        else:
+            # Rotate towards center
+            backup.angular.z = 2.0 if angle_diff > 0 else -2.0
+        
+        pub.publish(backup)
+
     def check_distance(self):
         if self.pose1 is None or self.pose2 is None:    # if initial poses are nonexistent do nothing
             return
@@ -53,16 +105,30 @@ class distance_node(Node):
         self.dist_pub.publish(distance_msg)
         print(f"Distance between turtles: {dist:.2f}")
 
-        # if to close we stop
+        # if too close, make them back away from each other
         if dist < THRESHOLD:
-            stop_msg = Twist()
-            self.cmd_pub_turtle1.publish(stop_msg)
-            self.cmd_pub_turtle2.publish(stop_msg)
+            print("WARNING: Turtles too close! Backing away...")
+            
+            # Make both turtles move backwards
+            backup1 = Twist()
+            backup1.linear.x = -BACKUP_SPEED
+            self.cmd_pub_turtle1.publish(backup1)
+            
+            backup2 = Twist()
+            backup2.linear.x = -BACKUP_SPEED
+            self.cmd_pub_turtle2.publish(backup2)
+            
+            return  # Skip boundary check if handling collision
 
-        # stop if going outside the window
-        for pose, pub in [(self.pose1, self.cmd_pub_turtle1), (self.pose2, self.cmd_pub_turtle2)]:
-            if pose.x < BOUNDARY_MIN or pose.x > BOUNDARY_MAX or pose.y < BOUNDARY_MIN or pose.y > BOUNDARY_MAX:
-                pub.publish(Twist())
+        # Check if turtle1 is going outside the window
+        if (self.pose1.x < BOUNDARY_MIN or self.pose1.x > BOUNDARY_MAX or 
+            self.pose1.y < BOUNDARY_MIN or self.pose1.y > BOUNDARY_MAX):
+            self.move_away_from_boundary(self.pose1, self.cmd_pub_turtle1, "Turtle1")
+
+        # Check if turtle2 is going outside the window
+        if (self.pose2.x < BOUNDARY_MIN or self.pose2.x > BOUNDARY_MAX or 
+            self.pose2.y < BOUNDARY_MIN or self.pose2.y > BOUNDARY_MAX):
+            self.move_away_from_boundary(self.pose2, self.cmd_pub_turtle2, "Turtle2")
 
 
 def main(args=None):

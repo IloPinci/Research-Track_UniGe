@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
 
 package_name = 'assignment1_rt'
 
@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', ['launch/run.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -18,12 +19,13 @@ setup(
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={
-        'test': [
-            'pytest',
-        ],
+        'test': ['pytest'],
     },
     entry_points={
         'console_scripts': [
+            'ui_node = assignment1_rt.ui_node:main',
+            'distance_node = assignment1_rt.distance_node:main',
+            'turtle_spawn = assignment1_rt.turtle_spawn:main',
         ],
     },
 )

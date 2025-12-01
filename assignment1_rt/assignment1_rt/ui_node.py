@@ -8,7 +8,7 @@ import math
 class command_node(Node):
     def __init__(self):
         super().__init__('command_node')
-
+        
         # Publishers for both turtles
         self.pub_turtle1 = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.pub_turtle2 = self.create_publisher(Twist, '/turtle2/cmd_vel', 10)
@@ -34,15 +34,24 @@ class command_node(Node):
                     pub = self.pub_turtle2
 
                 # now we determine the velocities 
-                l = float(input("Enter linear velocity: "))
-                a = float(input("Enter angular velocity: "))
+                l = float(input("Linear between -2 to 2: "))
+                a = float(input("Angular between -3 to 3 : "))
 
             except ValueError:
                 print("Invalid velocity input")
                 continue
 
-            # we create and assing values to a twist
+            # we create and clamp values to a twist
             twist = Twist()
+
+            if l < -2 or l > 2:
+                print(f"Warning: Linear velocity clamped")
+            if a < -3 or a > 3:
+                print(f"Warning: Angular velocity clamped")
+
+            l = max(-2.0, min(l, 2.0))
+            a = max(-3.0, min(a, 3.0))
+
             twist.linear.x = l
             twist.angular.z = a
 
