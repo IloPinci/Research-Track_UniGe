@@ -2,8 +2,10 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Bool
 import time
 import math
+import sys
 
 class command_node(Node):
     def __init__(self):
@@ -12,6 +14,9 @@ class command_node(Node):
         # Publishers for both turtles
         self.pub_turtle1 = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.pub_turtle2 = self.create_publisher(Twist, '/turtle2/cmd_vel', 10)
+        
+        # Publisher for shutdown signal
+        self.shutdown_pub = self.create_publisher(Bool, '/shutdown_signal', 10)
 
 
 
@@ -19,7 +24,12 @@ class command_node(Node):
         while rclpy.ok():
             str = input("Select turtle (1/2) or 'q' to quit: ").strip()
             if str == 'q':
-                print("\nExiting...")
+                print("\nExiting and shutting down all nodes...")
+                # Publish shutdown signal
+                shutdown_msg = Bool()
+                shutdown_msg.data = True
+                self.shutdown_pub.publish(shutdown_msg)
+                time.sleep(0.5)  # Give time for message to be sent
                 break
 
             if str not in ['1', '2']:
@@ -76,11 +86,16 @@ def main(args=None):
 
     except KeyboardInterrupt:
         print("\nExiting because of CTRL+C")
-        pass
+        # also publish shutdown signal on CTRL+C
+        shutdown_msg = Bool()
+        shutdown_msg.data = True
+        node.shutdown_pub.publish(shutdown_msg)
+        time.sleep(0.5)
 
     finally:
         node.destroy_node()
         rclpy.shutdown()
+        sys.exit(0)
 
 if __name__ == '__main__':
     main()
