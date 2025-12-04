@@ -17,7 +17,7 @@ def generate_launch_description():
     # spawn second turtle
     spawn_turtle = ExecuteProcess(
         cmd=['ros2', 'service', 'call', '/spawn', 'turtlesim/srv/Spawn', 
-             '{x: 2.0, y: 2.0, theta: 0.0, name: "turtle2"}'],
+             '{x: 7.0, y: 7.0, theta: 0.0, name: "turtle2"}'],
         output='screen'
     )
     
@@ -33,7 +33,7 @@ def generate_launch_description():
         output='screen'
     )
     
-    # When ui_node exits, shutdown everything
+    # when the ui exits we close all the others
     ui_exit_handler = RegisterEventHandler(
         OnProcessExit(
             target_action=ui_node,

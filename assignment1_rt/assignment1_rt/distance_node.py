@@ -83,7 +83,7 @@ class distance_node(Node):
         if abs(angle_diff) < math.pi / 4:  # Within 45 degrees
             backup.linear.x = BACKUP_SPEED
         else:
-            # Rotate towards center
+            # rotate towards center
             backup.angular.z = 2.0 if angle_diff > 0 else -2.0
         
         pub.publish(backup)
