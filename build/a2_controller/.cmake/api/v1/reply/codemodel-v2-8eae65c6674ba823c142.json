@@ -1,0 +1,251 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-29abc342f88b6377bca7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "a2_controller__py",
+					"jsonFile" : "directory-a2_controller__py-a03c306f1ff520520ee3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "build/a2_controller/a2_controller__py",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "a2_controller",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller-6041064bda19e47975e6.json",
+					"name" : "a2_controller",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__cpp-324409060fd8a1b1617c.json",
+					"name" : "a2_controller__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "a2_controller__py::@594b495521b5d41796c7",
+					"jsonFile" : "target-a2_controller__py-04bc7d7cd6cb877a15d2.json",
+					"name" : "a2_controller__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_generator_c-740b7f71ef1aff973ee8.json",
+					"name" : "a2_controller__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_generator_py-6a5b75f39da1ad0b4a6e.json",
+					"name" : "a2_controller__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_c-74a30cbb7b89be09bf0b.json",
+					"name" : "a2_controller__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_c__pyext-39f39b2b68edb84f7c74.json",
+					"name" : "a2_controller__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_cpp-44e514352cfa0d1de39c.json",
+					"name" : "a2_controller__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_fastrtps_c-bcebf5354a341b26a653.json",
+					"name" : "a2_controller__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_fastrtps_c__pyext-66bb08edff113933ad39.json",
+					"name" : "a2_controller__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_fastrtps_cpp-54b4dc118033376a612b.json",
+					"name" : "a2_controller__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_introspection_c-4ffe3e03a7099c69d1b1.json",
+					"name" : "a2_controller__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_introspection_c__pyext-6d3bc9520e99c3d6d060.json",
+					"name" : "a2_controller__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller__rosidl_typesupport_introspection_cpp-d01c64a86f66e74deba1.json",
+					"name" : "a2_controller__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a2_controller_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a2_controller_uninstall-efdb8094a84760a2534d.json",
+					"name" : "a2_controller_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_a2_controller_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_a2_controller_egg-56c924121c678368ae40.json",
+					"name" : "ament_cmake_python_build_a2_controller_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_a2_controller::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_a2_controller-bfc277b2e270afe70fb4.json",
+					"name" : "ament_cmake_python_symlink_a2_controller",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "control_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-control_node-e0cd1c4cf9fad9f12d78.json",
+					"name" : "control_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stat_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stat_node-cdacd35e5cf04e3f54cd.json",
+					"name" : "stat_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-648198b115799dea0082.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/snape/2_track/src/a2_controller/build/a2_controller",
+		"source" : "/home/snape/2_track/src/a2_controller"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

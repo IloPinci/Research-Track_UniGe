@@ -1,0 +1,21 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/msg/detail/obstacle_info__type_support.cpp.o"
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/msg/detail/obstacle_info__type_support.cpp.o.d"
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/get_velocity_stats__type_support.cpp.o"
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/get_velocity_stats__type_support.cpp.o.d"
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/set_safety_threshold__type_support.cpp.o"
+  "CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/set_safety_threshold__type_support.cpp.o.d"
+  "liba2_controller__rosidl_typesupport_introspection_cpp.pdb"
+  "liba2_controller__rosidl_typesupport_introspection_cpp.so"
+  "rosidl_typesupport_introspection_cpp/a2_controller/msg/detail/obstacle_info__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/a2_controller/msg/detail/obstacle_info__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/get_velocity_stats__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/get_velocity_stats__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/set_safety_threshold__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/a2_controller/srv/detail/set_safety_threshold__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/a2_controller__rosidl_typesupport_introspection_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

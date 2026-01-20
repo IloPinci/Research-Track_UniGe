@@ -39,10 +39,11 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# Install launch files
+# Install launch files WITH SYMLINK (no rebuild needed for changes!)
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}/
+  USE_SOURCE_PERMISSIONS
 )
 
 ament_export_dependencies(rosidl_default_runtime)

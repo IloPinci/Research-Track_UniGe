@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/snape/2_track/src/a2_controller/build/a2_controller/control_node" "/home/snape/2_track/src/a2_controller/build/a2_controller/stat_node" "TARGETS" "control_node" "stat_node" "DESTINATION" "lib/a2_controller")

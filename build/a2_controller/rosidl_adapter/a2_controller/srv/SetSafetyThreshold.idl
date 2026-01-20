@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from a2_controller/srv/SetSafetyThreshold.srv
+// generated code does not contain a copyright notice
+
+
+module a2_controller {
+  module srv {
+    struct SetSafetyThreshold_Request {
+      float new_threshold;
+    };
+    struct SetSafetyThreshold_Response {
+      boolean success;
+    };
+  };
+};

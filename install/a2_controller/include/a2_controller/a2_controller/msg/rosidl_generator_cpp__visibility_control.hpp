@@ -1,0 +1,1 @@
+/home/snape/2_track/src/a2_controller/build/a2_controller/rosidl_generator_cpp/a2_controller/msg/rosidl_generator_cpp__visibility_control.hpp

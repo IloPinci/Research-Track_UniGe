@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from a2_controller/srv/GetVelocityStats.srv
+// generated code does not contain a copyright notice
+
+
+module a2_controller {
+  module srv {
+    struct GetVelocityStats_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetVelocityStats_Response {
+      float avg_linear_vel;
+
+      float avg_angular_vel;
+    };
+  };
+};
