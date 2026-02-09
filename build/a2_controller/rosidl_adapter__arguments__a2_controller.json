@@ -1,8 +1,0 @@
-{
-  "package_name": "a2_controller",
-  "non_idl_tuples": [
-    "/home/snape/2_track/src/a2_controller:msg/ObstacleInfo.msg",
-    "/home/snape/2_track/src/a2_controller:srv/SetSafetyThreshold.srv",
-    "/home/snape/2_track/src/a2_controller:srv/GetVelocityStats.srv"
-  ]
-}

@@ -1,1 +1,0 @@
-/home/snape/2_track/src/a2_controller/build/a2_controller/ament_cmake_environment_hooks/local_setup.bash
