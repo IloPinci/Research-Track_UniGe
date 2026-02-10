@@ -1,5 +1,11 @@
 # Research Track UniGe: Assignment-2
 
+![Environment Setup](assets/enviroment.png)
+
+[**The robot in action**](https://youtu.be/LJHyMQzdmR8)
+
+---
+
 ## Overview
 A ROS2 package implementing autonomous collision avoidance and velocity statistical monitoring. The package manages velocity inputs through a safety controller and tracks command history statistics.
 
@@ -65,7 +71,7 @@ float32 avg_angular_vel
 - `std_msgs`
 - `bme_gazebo_sensors` (for simulation environment)
 - `teleop_twist_keyboard` (for manual robot control)
-- `xterm` (for separate terminal windows)
+- `terminator` (for separate terminal windows)
 
 ## Installation & Setup
 
@@ -91,9 +97,9 @@ cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-4. **Install xterm (for separate node terminals):**
+4. **Install Terminator (for separate node terminals):**
 ```bash
-sudo apt-get install xterm
+sudo apt-get install terminator
 ```
 
 5. **Build the package with symlink install (allows editing launch files without rebuilding):**
@@ -134,7 +140,7 @@ ros2 launch a2_controller controller.launch.py
 This will open:
 - Gazebo simulation window
 - RViz visualization window
-- Two xterm windows showing output from `control_node` and `stat_node`
+- Two Terminator windows showing output from `control_node` and `stat_node`
 
 ### Method 2: Manual Node Execution
 
@@ -271,6 +277,8 @@ a2_controller/
 ├── CMakeLists.txt
 ├── package.xml
 ├── README.md
+├── assets/
+│   └── environment_screenshot.png
 ├── launch/
 │   └── controller.launch.py
 ├── msg/
