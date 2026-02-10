@@ -1,0 +1,3 @@
+float32 min_distance
+float32 current_threshold
+string direction
