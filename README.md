@@ -27,20 +27,6 @@
 
 ---
 
-<div align="center">
-
-## [ NAVIGATION MENU ](#-table-of-contents) <a name="top"></a>
-
-</div>
-
-<div align="center">
-
-[**Overview**](#-overview) · [**Assignment 1**](#-assignment-1--multi-turtle-turtlesim-control) · [**Assignment 2**](#-assignment-2--autonomous-collision-avoidance) · [**Why Two Languages?**](#-why-c-and-python) · [**Architecture**](#-architecture) · [**Getting Started**](#-getting-started)
-
-</div>
-
----
-
 ## Table of Contents
 
 - [Overview](#-overview)
