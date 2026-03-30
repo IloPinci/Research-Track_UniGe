@@ -1,3 +1,0 @@
-/root/rt1/first_week/build/CMakeFiles/classes.dir
-/root/rt1/first_week/build/CMakeFiles/edit_cache.dir
-/root/rt1/first_week/build/CMakeFiles/rebuild_cache.dir
